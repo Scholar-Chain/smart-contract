@@ -49,9 +49,9 @@ contract ScholarChain is ERC721URIStorage, Ownable {
     event Cancelled(bytes32 indexed id, uint256 refundAuthor, uint256 reviewerFee);
     event Published(bytes32 indexed id, uint256 tokenId, string tokenURI);
 
-    constructor(address _idrx, address initialOwner) ERC721("ScholarChain Article", "SCHLR") Ownable(initialOwner) {
+    constructor(address _idrx, address initialOwner) ERC721("ScholarChain Article", "SCHLR") Ownable() {
         idrx = IERC20(_idrx);
-        // transferOwnership(initialOwner); // Mengatur pemilik awal kontrak
+        transferOwnership(initialOwner);
     }
 
     /* ============================  BUSINESS  LOGIC  ============================ */
